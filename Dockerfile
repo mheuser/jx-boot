@@ -1,8 +1,8 @@
 FROM alpine AS helmfile
 
-RUN apk add wget \
- && wget -nv https://github.com/helmfile/helmfile/releases/download/v0.155.0/helmfile_0.155.0_linux_amd64.tar.gz \
- && tar xfvz helmfile_0.155.0_linux_amd64.tar.gz
+RUN apk add curl \
+ && curl  -o helmfile.tar.gz -L -s https://github.com/helmfile/helmfile/releases/download/v0.162.0/helmfile_0.162.0_linux_amd64.tar.gz \
+ && tar xfvz helmfile.tar.gz
 
 FROM releases-docker.jfrog.io/jfrog/jfrog-cli-v2-jf AS jf
 
