@@ -6,7 +6,7 @@ RUN apk add wget \
 
 FROM releases-docker.jfrog.io/jfrog/jfrog-cli-v2-jf AS jf
 
-FROM ghcr.io/jenkins-x/jx-boot:3.10.88
+FROM ghcr.io/jenkins-x/jx-boot:3.10.136
 
 COPY --from=jf /usr/local/bin/jf /usr/local/bin/jf
 COPY --from=helmfile /helmfile /usr/local/bin/helmfile
