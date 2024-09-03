@@ -10,3 +10,4 @@ FROM ghcr.io/jenkins-x/jx-boot:3.10.154
 
 COPY --from=jf /usr/local/bin/jf /usr/local/bin/jf
 COPY --from=helmfile /helmfile /usr/local/bin/helmfile
+RUN helm plugin install https://github.com/aslafy-z/helm-git --version 1.3.0
